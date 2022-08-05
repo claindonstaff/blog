@@ -37,6 +37,7 @@
     "@astrojs/markdoc": "^0.0.1",
     "@astrojs/vercel": "^3.0.0",
     "ioredis": "^5.3.0",
-    "rollup-plugin-napi-image": "^0.5.1"
+    "rollup-plugin-napi-image": "^0.5.1",
+    "satori": "^0.4.4"
   }
 }
