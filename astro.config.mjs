@@ -4,6 +4,7 @@ import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import { napiImage } from 'rollup-plugin-napi-image';
 import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel/serverless";
 import markdoc from "@astrojs/markdoc";
@@ -41,7 +42,13 @@ export default defineConfig( /** @type {import('astro').AstroUserConfig} */{
     }
   }), sitemap()],
   vite: {
-    plugins: [],
+    plugins: [
+      napiImage({
+        toModernExt: () => 'webp',
+        quality: 75,
+        type: 'lossy'
+      })
+    ],
     resolve: {
       alias: {
         '$': path.resolve(__dirname, './src')
